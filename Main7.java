@@ -1,33 +1,36 @@
-import java.util.Scanner;
+import java.util.*;
 public class Main7 {
-    public static void main(String[] args) {
-      Scanner sc= new Scanner(System.in);
-      int a=sc.nextInt();
-      int c=0,temp=0,count=1,num,count2,temp1;
-      while(a!=0){
-        c=c+1;
-        a=a/10;
-      }  
-      if(c==10){
-        while(a!=0){
-              num=a;
-              temp=num%10;
-              count=count+1;
-              num=num/10;
-              temp1=num%10;
-              count2=count+1;
-              if(count%2!=0){
-                System.out.println((int)Math.pow(temp1,temp));
+    public static void frequency(String str) {
+      HashMap<String,Integer> word= new HashMap<>();
+      String[] string = str.split("");
+      for (String w:string){
+        if(word.containsKey(w)){
+          word.put(w,word.get(w)+1);
+    
 
-              }
+          }
+          else{
+            word.put(w,1);
+          }
+        }
+        for(String w : word.keySet()){
+          word.put(w,word.get(w));
+        }
+        System.out.println(word);
+      }
+      public static void main(String[] args) 
+        {String str ="bity bought a butter the butter bought was bitter";
+          frequency(str);
 
+      }
+    }
+      
             
 
-        }
+        
 
 
 
         
-      }
-    }
-}
+    
+
