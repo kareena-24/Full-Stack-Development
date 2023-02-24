@@ -2,7 +2,7 @@ import java.util.*;
 public class Main7 {
     public static void frequency(String str) {
       HashMap<String,Integer> word= new HashMap<>();
-      String[] string = str.split("");
+      String[] string = str.split("//s+");
       for (String w:string){
         if(word.containsKey(w)){
           word.put(w,word.get(w)+1);
